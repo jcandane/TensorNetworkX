@@ -1,4 +1,5 @@
 import torch
+import math
 
 def su(N, dtype=torch.complex128): #JW=False, 
     """
@@ -125,3 +126,5 @@ def get_tno_element(N, b, H1=None, dtype=torch.complex128): ### do H1
     data    = torch.concat(tnod)
     shapee  = torch.concat(( M*torch.ones(len(b),dtype=int), torch.tensor(t.shape[1:])))
     return torch.sparse_coo_tensor(indices, data, [int(i.item()) for i in shapee])
+
+    su(5, [1])
